@@ -13,7 +13,7 @@
 	<div class="header">
 		<div class="row header__container" style="height: 100%;">
 
-			<div class="col-md-4 header__container header__logo">
+			<div class="col-md-4 col-sm-6 header__container header__logo justify-content-center">
 				<a class="
 					<?php if ( strpos( $_SERVER['REQUEST_URI'], 'home' ) ) { ?>
 						active

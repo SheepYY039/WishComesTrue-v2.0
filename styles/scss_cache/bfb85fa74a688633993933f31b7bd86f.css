@@ -1,7 +1,8 @@
-/* compiled by scssphp v0.0.12 on Wed, 13 Jan 2021 12:04:02 +0000 (0.0129s) */
+/* compiled by scssphp v0.0.12 on Fri, 22 Jan 2021 01:17:30 +0000 (0.1367s) */
 
 @import url('https://fonts.googleapis.com/css2?family=Basic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Basic&family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 @font-face {
   font-family: "Reklame Script";
   src: url("/fonts/ReklameScriptMedium.otf") format("opentype"); }
@@ -9,6 +10,10 @@
 @font-face {
   font-family: "Trend";
   src: url("/fonts/Trend.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "DIN Next W01 Light";
+  src: url("/fonts/DIN.ttf") format("truetype"); }
 
 .home__img {
   width: 100%;

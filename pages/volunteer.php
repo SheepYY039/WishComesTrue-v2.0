@@ -18,7 +18,7 @@ if ( mysqli_connect_errno() ) {
 
 	exit;
 }
-  $sql    = 'SELECT `Wish_id`,`Wish_name`,`Project_type`,`Minority_groups`,`Donating_type`,`Organization_name`,`District`, `Start_date`, `End_date` FROM `tbl_wishes` WHERE `isApproved` = 1';
+  $sql    = 'SELECT `Wish_id`,`Wish_name`, `Phone`, `Email`, `Project_type`,`Minority_groups`,`Donating_type`,`Organization_name`,`District`, `Start_date`, `End_date`, `Additional_Information` FROM `tbl_wishes` WHERE `isApproved` = 1';
   $result = mysqli_query( $conn, $sql );
 
 ?>
@@ -42,7 +42,8 @@ if ( mysqli_connect_errno() ) {
 					?>
 			<div class="wish">
 				<div class="wish__contents">
-					<h3 class="wish__name"><?php echo $row['Wish_name']; ?>
+					<h3 class="wish__name">
+						<?php echo $row['Wish_name']; ?>
 					</h3>
 					<p class="wish__filters">
 						<?php echo $row['Minority_groups'] . $row['Project_type'] . $row['Donating_type']; ?>
@@ -50,46 +51,55 @@ if ( mysqli_connect_errno() ) {
 				</div>
 				<button type="button" class="wish__more-info details_button" data-bs-toggle="modal"
 					data-bs-target="#modal-<?php echo $row['Wish_id']; ?>">More Info</button>
-				<!-- Button trigger modal -->
-				<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-					Launch demo modal
-				</button> -->
-				<!-- Modal -->
 				<div class="modal fade" id="modal-<?php echo $row['Wish_id']; ?>" tabindex="-1"
 					aria-labelledby="<?php echo $row['Wish_id']; ?>ModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
+					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+								<h5 class="modal-title" id="exampleModalLabel">
+									<?php echo $row['Wish_name']; ?>
+								</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<div class="modal-content">
-									<div class="field">
-										<h4>Organization Name</h4>
-										<h5>
-											<?php echo $row['Organization_name']; ?>
-										</h5>
-									</div>
-									<div class="field">
-										<h4>District</h4>
-										<h5>
-											<?php echo $row['District']; ?>
-										</h5>
-									</div>
-									<div class="field">
-										<h4>Start date</h4>
-										<h5>
-											<?php echo $row['Start_date']; ?>
-										</h5>
-									</div>
-									<div class="field">
-										<h4>End date</h4>
-										<h5>
-											<?php echo $row['End_date']; ?>
-										</h5>
-									</div>
-								</div>
+								<div class="modal-content table-responsive">
+								<table class="table table-hover">
+									<tbody>
+										<tr>
+											<th scope="row">Organization Name</th>
+											<td><?php echo $row['Organization_name']; ?></td>
+										</tr>
+										<tr>
+											<th scope="row">Organization Email</th>
+											<td>
+												<a href="mailto:<?php echo $row['Email']; ?>"><?php echo $row['Email']; ?></a>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">Organization Phone</th>
+											<td>
+												<a href="tel:<?php echo $row['Phone']; ?>"><?php echo $row['Phone']; ?></a>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">District</th>
+											<td><?php echo $row['District']; ?></td>
+										</tr>
+										<tr>
+											<th scope="row">Start date</th>
+											<td><?php echo $row['Start_date']; ?></td>
+										</tr>
+										<tr>
+											<th scope="row">End date</th>
+											<td><?php echo $row['End_date']; ?></td>
+										</tr>
+										<tr>
+											<th scope="row">Additional Information</th>
+											<td><?php echo $row['Additional_Information']; ?></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -134,7 +144,7 @@ if ( mysqli_connect_errno() ) {
 					</div>
 				</div> -->
 			</div>
-			<?php
+					<?php
 				}
 			}
 			?>
