@@ -1,4 +1,19 @@
-/* compiled by scssphp v0.0.12 on Mon, 11 Jan 2021 10:53:01 +0000 (0.0354s) */
+/* compiled by scssphp v0.0.12 on Fri, 15 Jan 2021 11:38:21 +0000 (0.021s) */
+
+@import url('https://fonts.googleapis.com/css2?family=Basic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Basic&family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@font-face {
+  font-family: "Reklame Script";
+  src: url("/fonts/ReklameScriptMedium.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Trend";
+  src: url("/fonts/Trend.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "DIN Next W01 Light";
+  src: url("/fonts/DIN.ttf") format("truetype"); }
 
 .footer {
   position: relative;
@@ -34,7 +49,8 @@
         background: linear-gradient(to right, #ffd94d, #ffd94d 50%, #fa7950 50%);
         background-position: 100%;
         background-size: 200% 100%;
-        transition: background-position 425ms ease; }
+        transition: background-position 425ms ease;
+        font-family: helvetica-w01-bold, helvetica-w02-bold, helvetica-lt-w10-bold, Helvetica, sans-serif; }
         .footer__social-media--button .contact-us:hover {
           background-color: #ff9d80;
           background-position: 0 100%; }
@@ -64,7 +80,10 @@
   border: 0;
   padding: 15px;
   border-radius: 3px;
-  transition: background 0.5s ease; }
+  transition: background 0.5s ease;
+  font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+  color: #292929;
+  letter-spacing: 0.15em; }
 
 .check-out:hover {
   font-weight: normal; }

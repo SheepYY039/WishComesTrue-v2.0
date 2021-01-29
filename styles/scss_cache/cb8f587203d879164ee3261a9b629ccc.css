@@ -1,9 +1,19 @@
-/* compiled by scssphp v0.0.12 on Wed, 13 Jan 2021 06:40:34 +0000 (0.0207s) */
+/* compiled by scssphp v0.0.12 on Fri, 15 Jan 2021 11:38:21 +0000 (0.0364s) */
 
 @import url('https://fonts.googleapis.com/css2?family=Basic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Basic&family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 @font-face {
-  font-family: "ReklameScript";
+  font-family: "Reklame Script";
   src: url("/fonts/ReklameScriptMedium.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Trend";
+  src: url("/fonts/Trend.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "DIN Next W01 Light";
+  src: url("/fonts/DIN.ttf") format("truetype"); }
 
 .home__img {
   width: 100%;
@@ -24,7 +34,7 @@
   .subheading__text {
     margin: 10px 0px 0px 15px;
     display: inline-block;
-    font-family: "ReklameScript", "Arial Narrow", Arial, sans-serif;
+    font-family: "Reklame Script", "Arial Narrow", Arial, sans-serif;
     letter-spacing: 0.1em;
     line-height: 1.4em; }
     .subheading__text {
@@ -92,3 +102,124 @@
   background-color: #fc7650;
   opacity: 1;
   margin: 1vh 0; }
+
+.founders__heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-family: 'Trend', sans-serif; }
+  .founders__img {
+    width: 100%;
+    height: auto; }
+  .founders__button {
+    cursor: pointer;
+    border: none;
+    display: block;
+    min-width: 10px;
+    min-height: 10px;
+    box-sizing: border-box;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #000;
+    width: 262px;
+    height: 67px;
+    transition: all 0.2s ease, visibility 0s;
+    border-radius: 0px;
+    background: #b5f3e8;
+    box-shadow: 2.83px 2.83px 0 #65b5a6;
+    margin: 2vh auto;
+    transform: translateY(-5vh); }
+    .founders__button:hover {
+      box-shadow: -2.83px -2.83px 0 #65b5a6; }
+    .founders__button--container {
+      transition: inherit;
+      display: flex;
+      flex-basis: auto;
+      justify-content: center;
+      flex-direction: row;
+      flex-grow: 1;
+      align-items: center;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      transition: all 0.2s ease, visibility 0s; }
+    .founders__button--label {
+      transition: inherit;
+      color: #8e0a12;
+      font-size: 14px;
+      font-family: raleway, sans-serif;
+      font-weight: 600;
+      margin: 0px 2px 0px 0px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 1.8em;
+      max-width: 100%;
+      transition: inherit; }
+    .founders__button--icon {
+      transition: inherit;
+      fill: #8e0a12;
+      margin: 0px 0px 0px 2px;
+      width: 11px;
+      min-width: 1px;
+      transition: inherit;
+      flex-shrink: 0; }
+
+.wish-button {
+  width: 235px;
+  height: 36px;
+  transition: all 0.2s ease, visibility 0s;
+  border-radius: 0px;
+  background: #f9c65d;
+  box-shadow: 2.83px 2.83px 0 #195b52;
+  cursor: pointer;
+  border: none;
+  display: block;
+  min-width: 10px;
+  min-height: 10px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: auto;
+  transform: translateY(3vh); }
+  .wish-button:hover {
+    box-shadow: 0.71px 0.71px 0 #195b52; }
+  .wish-button__container {
+    transition: inherit;
+    display: flex;
+    flex-basis: auto;
+    justify-content: center;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease, visibility 0s; }
+  .wish-button__label {
+    transition: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: helvetica-w01-bold, helvetica-w02-bold, helvetica-lt-w10-bold, sans-serif;
+    font-size: 12px;
+    color: #195b52;
+    -archetype: text;
+    -controller-part-type: LayoutChildDisplayDropdown, LayoutFlexChildSpacing(first);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 1.8em;
+    max-width: 100%;
+    transition: inherit; }
+  .wish-button__icon {
+    transition: inherit;
+    width: 14px;
+    height: 14px;
+    fill: #195b52;
+    display: none;
+    -archetype: icon;
+    -controller-part-type: LayoutChildDisplayDropdown, LayoutFlexChildSpacing(last);
+    min-width: 1px;
+    height: 50px;
+    transition: inherit;
+    flex-shrink: 0; }
