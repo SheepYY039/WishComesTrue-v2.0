@@ -12,19 +12,27 @@
 
 <body>
 	<div class="header">
-	<?php if (!empty($_REQUEST['success'])) { ?>
-		<div class="alert alert-primary alert-dismissible fade show" role="alert">
-			<strong>Wish Added Successfully!</strong>
-			Your wish will be processed by us in the coming few days.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-	<?php } else if (!empty($_REQUEST['error'])) {?>
-	<div class="alert alert-warning alert-dismissible fade <?php echo "show"?>" role="alert">
-			<strong>Adding Wish <?php echo $wish?> Unsuccessful!</strong>
-			Please try again!
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-	<?php } ?>
+		<?php if (!empty($_SESSION['success'])) { ?>
+			<div class="alert alert-primary alert-dismissible fade show" role="alert">
+				<strong>Wish Added Successfully!</strong>
+				Your wish will be processed by us in the coming few days.
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+
+		<?php
+			$_SESSION['success'] = null;
+			unset($_SESSION['success']);
+		} else if (!empty($_SESSION['error'])) { ?>
+			<div class="alert alert-warning alert-dismissible fade <?php echo "show" ?>" role="alert">
+				<strong>Adding Wish <?php echo $wish ?> Unsuccessful!</strong>
+				Please try again!
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+
+		<?php
+			$_SESSION['error'] = null;
+			unset($_SESSION['error']);
+		} ?>
 		<div class="row header__container" style="height: 100%;">
 
 			<div class="col-md-4 col-sm-6 header__container header__logo justify-content-center">
@@ -40,15 +48,15 @@
 			<div class="col-md-8 header__container ">
 				<div class="row header__container d-flex justify-content-end">
 					<div class="col-md-8 header__login d-flex align-self-center">
-						<?php if (isset($_SESSION['id'])) { 
-							?>
+						<?php if (isset($_SESSION['id'])) {
+						?>
 							<!-- Button trigger modal -->
 							<button class="header__login--button" id="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Submit a
 								Wish</button>
 						<?php } else { ?>
 							<button class="btn header__login--button" id="button" disabled>Please login to Submit a Wish &rarr;
 							</button>
-						<?php } 
+						<?php }
 						require 'google_auth/auth.php';
 						?>
 					</div>
@@ -63,7 +71,7 @@
 		</div>
 	</div>
 	<?php
-			include 'includes/wish-submission-form.php';
+	include 'includes/wish-submission-form.php';
 	?>
 
 </body>

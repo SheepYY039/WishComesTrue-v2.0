@@ -7,7 +7,7 @@
 	{
 		$wish  = "'" . $_GET['wish'] . "'";
 		$name  = "'" . $_GET['name'] . "'";
-		$email = "'" . $_GET['email'] . "'";
+		$email = '"' . $_GET['email'] . '"';
 		$phone = 'null';
 		if (!empty($_GET['phone']) && $_GET['phone'] != '') {
 			$phone = "'" . $_GET['phone'] . "'";
@@ -81,17 +81,28 @@
 		}
 		// echo 'Connected successfully<br/>';
 
-		$sql = 'INSERT INTO `tbl_wishes` (`Wish_name`, `Organization_name`, `Email`, `Phone`, `Minority_groups`, `Donating_type`, `Project_type`, `People`, `Money`, `District`, `Event_time`, `Start_date`, `End_date`, `Additional_Information`) VALUES (' . $wish . ', ' . $name . ', ' . $email . ', ' . $phone . ', ' . $groups . ', ' . $donating . ', ' . $projects . ', ' . $people . ', ' . $money . ', ' . $district . ', ' . $starttime . ', ' . $start . ', ' . $end . ', ' . $info . ')';
+		// TODO: Not uploaded to website yet
+		$user = 'SELECT User_id FROM users WHERE email = '. $email .'OR name = '. $name;
+		if(mysqli_query($conn, $user)){
+			echo $user['User_id'];
+			$uid = $user['User_id'];
+		} else {
+			echo "Email not registered as an org";
+		}
+		
 
+		$sql = 'INSERT INTO `tbl_wishes` (`Wish_name`, `User_id`, `Email`, `Phone`, `Minority_groups`, `Donating_type`, `Project_type`, `People`, `Money`, `District`, `Event_time`, `Start_date`, `End_date`, `Additional_Information`) VALUES (' . $wish . ', ' . $uid . ', ' . $email . ', ' . $phone . ', ' . $groups . ', ' . $donating . ', ' . $projects . ', ' . $people . ', ' . $money . ', ' . $district . ', ' . $starttime . ', ' . $start . ', ' . $end . ', ' . $info . ')';
+		
+		session_start();
 		// here we need to add to db
 		if (mysqli_query($conn, $sql)):
-			header("Location: /?success=1");
-			// echo 'New records created successfully<br>';
-		 else:
-			header("Location: /?error=1");
-			// echo 'Error: ' . $sql . '<br>' . mysqli_error($conn);
-		 endif;
-	
-		}
+			$_SESSION['success'] = '1';
+			header("Location: /");
+		else:
+			$_SESSION['error'] = '1';
+			header("Location: /");
+		endif;
+		
+	}
 
 	?>

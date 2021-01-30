@@ -39,17 +39,17 @@
 
 <body>
 	<?php
-	require './includes/scripts.php';
+	require 'includes/scripts.php';
 	?>
 	<div class="container" style="background-color: white;">
 		<?php
-		require './includes/header.php';
+		require 'includes/header.php';
 
-		require './includes/body.php';
+		require 'includes/body.php';
 		?>
 	</div>
 	<?php
-	require './includes/footer.php';
+	require 'includes/footer.php';
 	?>
 </body>
 
