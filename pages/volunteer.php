@@ -9,17 +9,17 @@ $password   = 'WCThk2020-WCThk2020';
 $dbname     = 'id15251966_wishes';
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect( $servername, $username, $password, $dbname );
 
 // CHECK DATABASE CONNECTION
-if (mysqli_connect_errno()) {
+if ( mysqli_connect_errno() ) {
 	echo 'Connection Failed' . mysqli_connect_error();
 
 	exit;
 }
 $sql = 'SELECT Wish_id, Wish_name, w.User_id as uid, Phone, u.email as Email, Project_type, Minority_groups, Donating_type, u.name as Organization_name, District, Start_date, End_date, Additional_Information FROM tbl_wishes w INNER JOIN users u ON w.User_id = u.User_id WHERE isApproved = 1 AND isVolunteer = 1';
 
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query( $conn, $sql );
 
 ?>
 
@@ -36,12 +36,12 @@ $result = mysqli_query($conn, $sql);
 
 		<div id="wishescontainermain" class="col-md-9 wishes">
 			<?php
-			if (mysqli_num_rows($result) > 0) {
+			if ( mysqli_num_rows( $result ) > 0 ) {
 				// output data of each row
-				while ($row = mysqli_fetch_assoc($result)) {
-			?>
-					<div class="wish">
-						<div class="wish__contents">
+				while ( $row = mysqli_fetch_assoc( $result ) ) {
+					?>
+					<div class="row wish">
+						<div class="col-md-9 wish__contents">
 							<h3 class="wish__name">
 								<?php echo $row['Wish_name']; ?>
 							</h3>
@@ -49,7 +49,9 @@ $result = mysqli_query($conn, $sql);
 								<?php echo $row['Minority_groups'] . $row['Project_type'] . $row['Donating_type']; ?>
 							</p>
 						</div>
-						<button type="button" class="wish__more-info details_button" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $row['Wish_id']; ?>">More Info</button>
+
+						<button type="button" class="col-md-3 wish__more-info details_button" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $row['Wish_id']; ?>">More Info</button>
+
 						<div class="modal fade" id="modal-<?php echo $row['Wish_id']; ?>" tabindex="-1" aria-labelledby="<?php echo $row['Wish_id']; ?>ModalLabel" aria-hidden="true">
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
@@ -107,7 +109,7 @@ $result = mysqli_query($conn, $sql);
 							</div>
 						</div>
 					</div>
-			<?php
+					<?php
 				}
 			}
 			?>
@@ -149,4 +151,4 @@ $result = mysqli_query($conn, $sql);
 </html>
 
 <?php
-mysqli_close($conn);
+mysqli_close( $conn );

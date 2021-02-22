@@ -8,7 +8,7 @@ require_once 'includes/google_auth/google-login-api.php';
 if ( isset( $_GET['code'] ) ) {
 	try {
 		$google_api = new GoogleLoginApi();
-		echo $google_api;
+		// echo $google_api;
 
 		// Get the access token
 		$data = $google_api->GetAccessToken( CLIENT_ID, CLIENT_REDIRECT_URL, CLIENT_SECRET, $_GET['code'] );

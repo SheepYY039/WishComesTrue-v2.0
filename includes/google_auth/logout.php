@@ -17,7 +17,8 @@
 			google_api.auth2.init().then(function() {
 				var auth2 = google_api.auth2.getAuthInstance();
 				auth2.signOut().then(function() {
-					document.location.href = 'home.php';
+					document.location.href = '/';
+					window.location = "/";
 				});
 			});
 		});

@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Wed, 13 Jan 2021 11:06:18 +0000 (0.0064s) */
+/* compiled by scssphp v0.0.12 on Mon, 22 Feb 2021 12:56:27 +0000 (0.0185s) */
 
 /* ======WEBSITE HEADER====== */
 header {
@@ -11,7 +11,8 @@ header {
   /* ======WEBSITE HEADER====== */ }
 
 .header {
-  height: 357px; }
+  height: 357px;
+  padding-top: 1vh; }
   @media (min-width: 768px) {
     .header__container {
       height: 98%; } }

@@ -18,7 +18,8 @@
 }
 
 .wishes {
-  height: 90%;
+  max-height: 90vh;
+  overflow-y: scroll;
   padding: 10px;
 }
 
@@ -41,30 +42,31 @@
   line-height: 26px;
   display: flex;
   align-items: center;
-  letter-spacing: 1.25px;
-  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
   margin: 1%;
+  font-size: calc(12px + .8vw);
 }
 
 .wish .wish__filters {
   height: 40%;
   font-style: italic;
-  font-weight: 500;
+  // font-weight: 500;
   font-size: 16px;
   line-height: 16px;
   display: flex;
   align-items: center;
-  text-align: center;
   letter-spacing: 1.25px;
   text-transform: uppercase;
+  font-size: calc(12px + .2vw);
 }
 
 .wish .wish__contents {
-  width: 80%;
+  // width: 80%;
 }
 
 .wish .wish__more-info {
-  width: 25%;
+  // width: 25%;
   height: 45%;
   background: #fff684;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
@@ -80,7 +82,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: auto 0;
   padding: inherit;
 }
 

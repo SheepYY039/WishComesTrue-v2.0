@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Wed, 13 Jan 2021 13:47:52 +0000 (0.0034s) */
+/* compiled by scssphp v0.0.12 on Sat, 30 Jan 2021 13:07:07 +0000 (0.0042s) */
 
 .field {
   display: flex;
@@ -38,27 +38,23 @@
   line-height: 26px;
   display: flex;
   align-items: center;
-  letter-spacing: 1.25px;
-  text-transform: uppercase;
-  margin: 1%; }
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  margin: 1%;
+  font-size: calc(12px + .8vw); }
 
 .wish .wish__filters {
   height: 40%;
   font-style: italic;
-  font-weight: 500;
   font-size: 16px;
   line-height: 16px;
   display: flex;
   align-items: center;
-  text-align: center;
   letter-spacing: 1.25px;
-  text-transform: uppercase; }
-
-.wish .wish__contents {
-  width: 80%; }
+  text-transform: uppercase;
+  font-size: calc(12px + .2vw); }
 
 .wish .wish__more-info {
-  width: 25%;
   height: 45%;
   background: #fff684;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
@@ -74,7 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: auto 0;
   padding: inherit; }
 
 .wish__more-info:hover {

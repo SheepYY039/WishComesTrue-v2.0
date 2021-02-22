@@ -46,7 +46,7 @@ $avatar              = array_rand( $random_images_array, 1 );
 						<i class="fas fa-envelope fa-lg"></i><?php echo $_SESSION['email']; ?>
 					</li>
 					<li class="withA">
-						<a href="logout.php"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
+						<a href="includes/google_auth/logout.php"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -58,15 +58,15 @@ $avatar              = array_rand( $random_images_array, 1 );
 				</button>
 			</a>
 			<!-- <img class="avatar" src=" -->
-			<?php 
-				// echo 'images/avatar/' . $random_images_array[ $avatar ]; 
+				<?php
+				// echo 'images/avatar/' . $random_images_array[ $avatar ];
 				?>
 			<!-- " alt="User" /> -->
 			<!-- <div class="dropdown-content _info">
 				<ul>
 					<li class="withA">
 						<a href=" -->
-			<?php // echo $login_url; ?>
+				<?php // echo $login_url; ?>
 			<!-- ">
 							<i class="fab fa-google fa-lg"></i>
 							Login with Google
